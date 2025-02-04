@@ -1,11 +1,13 @@
 provider "aws" {
-    region = "us-east-1"  
+  region = "ap-south-1"  # Replace with your desired AWS region
 }
 
-resource "aws_instance" "foo" {
-  ami           = "ami-05fa46471b02db0ce" # us-west-2
-  instance_type = "t2.micro"
+resource "aws_instance" "my_ec2" {
+  ami           = "ami-05fa46471b02db0ce"  # Replace with a valid AMI ID for your region
+  instance_type = "t2.micro"  # Instance type
+  
   tags = {
-      Name = "TF-Instance"
+    Name = "MyTerraformEC2"
   }
 }
+
